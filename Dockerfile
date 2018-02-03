@@ -22,6 +22,9 @@ RUN LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php \
     && curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
 
+# Install Java
+RUN apt-get install -y default-jre
+
 # Install Postgres9.6
 RUN add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" \
     && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - \
