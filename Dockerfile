@@ -30,3 +30,7 @@ RUN add-apt-repository "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg
     && wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - \
     && apt-get update \
     && apt-get install -y postgresql-9.6
+
+# Install NodeJS
+RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+RUN apt-get install -y nodejs
